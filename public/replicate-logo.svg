@@ -1,0 +1,12 @@
+<svg width="290" height="52" viewBox="0 0 290 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="replicateLogoGradient" x1="8" y1="6" x2="44" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A2A66" />
+      <stop offset="1" stop-color="#39BFE4" />
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="50" height="50" rx="12" stroke="#C8D4E8" />
+  <path d="M16 14H26C34.8 14 40 18.5 40 26.8C40 34.5 34.8 40 26 40H16V14ZM24 21V33H26C30.1 33 32.8 30.8 32.8 26.8C32.8 22.8 30.1 21 26 21H24Z" fill="url(#replicateLogoGradient)" />
+  <text x="64" y="30" font-size="34" font-family="Inter, Arial, sans-serif" font-weight="500" fill="#09265F">Replicate</text>
+  <text x="66" y="45" font-size="9" font-family="Inter, Arial, sans-serif" letter-spacing="1.2" fill="#6A7FA4">CUSTOM IMMEDIATE TOOTH REPLACEMENT SYSTEM</text>
+</svg>

@@ -1,0 +1,10 @@
+# Netlify build config for Next.js 15
+# Netlify auto-detects Next.js and uses the OpenNext adapter (no plugin needed).
+# https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
