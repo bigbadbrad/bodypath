@@ -1,14 +1,23 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Box, Typography } from '@mui/material';
 
-const links = ['Solution', 'How It Works', 'Clinical Benefits', 'For Dentists', 'Company', 'Privacy Policy', 'Terms of Use', 'Contact'];
+import { BodypathIcon } from '@/components/bodypath-icon';
+
+const links = [
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Care Paths', href: '/#care-paths' },
+  { label: 'For Partners', href: '/#partners' },
+  { label: 'Find My Next Step', href: '/intake' },
+  { label: 'Privacy Policy', href: '#' },
+  { label: 'Terms of Use', href: '#' },
+  { label: 'Contact', href: 'mailto:hello@getbodypath.com' },
+];
 
 export function Footer() {
   return (
-    <Box component="footer" sx={{ color: '#FFFFFF', background: 'linear-gradient(90deg, #071D4E 0%, #06255E 40%, #0A4A7F 100%)' }}>
+    <Box component="footer" sx={{ color: '#FFFFFF', bgcolor: '#B02A24' }}>
       <Box
         sx={{
           maxWidth: 1220,
@@ -21,24 +30,25 @@ export function Footer() {
           textAlign: 'center',
         }}
       >
-        <Box sx={{ mb: 2.2, lineHeight: 0 }}>
-          <Image
-            src="/icon-white-transparent.png"
-            alt="Replicate icon"
-            width={1094}
-            height={725}
-            style={{ height: 'clamp(56px, 12vw, 96px)', width: 'auto', maxWidth: 'min(100%, 280px)', objectFit: 'contain' }}
-          />
+        <Box sx={{ mb: 2.2, lineHeight: 0, height: { xs: 72, md: 96 } }}>
+          <BodypathIcon color="#ffffff" height="100%" />
         </Box>
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2.2, mb: 1.8, justifyContent: 'center' }}>
           {links.map((item) => (
-            <Typography key={item} component={Link} href="#" sx={{ color: '#DFEAFF', fontSize: '0.86rem', textDecoration: 'none' }}>
-              {item}
+            <Typography
+              key={item.label}
+              component={Link}
+              href={item.href}
+              sx={{ color: 'rgba(255,255,255,0.92)', fontSize: '0.86rem', textDecoration: 'none', '&:hover': { color: '#fff' } }}
+            >
+              {item.label}
             </Typography>
           ))}
         </Box>
-        <Typography sx={{ color: '#BFD4F7', fontSize: '0.82rem', maxWidth: 640 }}>
-          The Replicate System is not available for distribution in the U.S.
+        <Typography sx={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.82rem', maxWidth: 720, lineHeight: 1.55 }}>
+          BodyPath provides educational health navigation and care-path information. BodyPath does not provide medical
+          diagnosis, treatment, emergency care, or prescriptions. Always consult a qualified healthcare professional for
+          medical advice. If you may be experiencing a medical emergency, call 911 or seek emergency care immediately.
         </Typography>
       </Box>
     </Box>

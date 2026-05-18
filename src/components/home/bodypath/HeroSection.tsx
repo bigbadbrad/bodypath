@@ -213,7 +213,7 @@ export function HeroSection() {
       component="section"
       sx={{
         bgcolor: '#ffffff',
-        pt: { xs: 4, md: 6 },
+        pt: { xs: 4, md: 8 },
         pb: { xs: 4, lg: 0 },
         overflow: 'visible',
       }}
@@ -265,6 +265,8 @@ export function HeroSection() {
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'stretch', sm: 'center' }} spacing={2} sx={{ mt: 4 }}>
             <Button
+              component={Link}
+              href="/intake"
               variant="contained"
               endIcon={<ArrowForward />}
               sx={{
@@ -279,7 +281,7 @@ export function HeroSection() {
                 '&:hover': { bgcolor: '#96231E', boxShadow: 'none' },
               }}
             >
-              Get Your Personalized BodyPath
+              Find My Next Step
             </Button>
             <Typography
               component={Link}
