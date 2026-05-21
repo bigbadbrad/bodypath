@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { BodyPathStartButton } from '@/components/bodypath/BodyPathStartButton';
 import {
   ArrowForward,
   AssignmentOutlined,
@@ -264,25 +265,15 @@ export function HeroSection() {
             right tests, treatments, and providers for you.
           </Typography>
           <Stack direction={{ xs: 'column', sm: 'row' }} alignItems={{ xs: 'stretch', sm: 'center' }} spacing={2} sx={{ mt: 4 }}>
-            <Button
-              component={Link}
-              href="/intake"
-              variant="contained"
-              endIcon={<ArrowForward />}
+            <BodyPathStartButton
+              sourcePage="/"
               sx={{
                 bgcolor: ACCENT,
-                borderRadius: 999,
-                px: 3,
-                py: 1.35,
-                textTransform: 'none',
-                fontWeight: 600,
-                fontSize: '0.95rem',
-                boxShadow: 'none',
-                '&:hover': { bgcolor: '#96231E', boxShadow: 'none' },
+                '&:hover': { bgcolor: '#96231E' },
               }}
             >
               Find My Next Step
-            </Button>
+            </BodyPathStartButton>
             <Typography
               component={Link}
               href="#how-it-works"

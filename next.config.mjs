@@ -6,6 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 /** @type {import('next').NextConfig} */
 const config = {
   outputFileTracingRoot: path.join(__dirname),
+  transpilePackages: ['@bodypath/start-widget'],
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'www.mpsmc.org', pathname: '/**' },

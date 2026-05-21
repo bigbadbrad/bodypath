@@ -3,6 +3,7 @@
 import * as React from 'react';
 import { usePathname } from 'next/navigation';
 import { Box } from '@mui/material';
+import { BodyPathWidgetProvider } from '@/components/bodypath/BodyPathWidgetProvider';
 import { MainNavbar } from '@/components/main-navbar';
 import { Footer } from '@/components/footer';
 
@@ -19,27 +20,31 @@ export function LayoutWrapper({ children }: LayoutWrapperProps) {
     return <React.Fragment>{children}</React.Fragment>;
   }
 
+  const isIntakeRoute = pathname === '/intake';
+
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flex: '1 1 auto',
-        flexDirection: 'column',
-        backgroundColor: '#FFFFFF',
-        minHeight: '100vh',
-      }}
-    >
-      <MainNavbar />
+    <BodyPathWidgetProvider>
       <Box
-        component="main"
         sx={{
-          paddingTop: { xs: '72px', sm: '84px' },
+          display: 'flex',
+          flex: '1 1 auto',
+          flexDirection: 'column',
           backgroundColor: '#FFFFFF',
+          minHeight: '100vh',
         }}
       >
-        {children}
+        {!isIntakeRoute && <MainNavbar />}
+        <Box
+          component="main"
+          sx={{
+            paddingTop: isIntakeRoute ? 0 : { xs: '72px', sm: '84px' },
+            backgroundColor: '#FFFFFF',
+          }}
+        >
+          {children}
+        </Box>
+        {!isIntakeRoute && <Footer />}
       </Box>
-      <Footer />
-    </Box>
+    </BodyPathWidgetProvider>
   );
 }
